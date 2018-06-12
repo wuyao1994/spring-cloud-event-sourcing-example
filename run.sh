@@ -3,7 +3,7 @@
 set -e
 
 # Build the project and docker images
-mvn clean install
+mvn clean install -Dmaven.test.skip=true
 
 # Export the active docker machine IP
 export DOCKER_IP=192.168.0.114
@@ -41,4 +41,4 @@ done
 docker-compose up -d
 
 # Attach to the log output of the cluster
-docker-compose logs
+docker-compose logs -f
