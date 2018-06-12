@@ -7,5 +7,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/kbastani/spring-cloud-event-sourcing-config.git
-      label: aaxis
+          uri: https://github.com/wuyao1994/spring-cloud-event-sourcing-config.git
+      label: dev

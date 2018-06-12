@@ -9,4 +9,4 @@ spring:
   profiles: docker
   cloud:
     config:
-      uri: http://172.17.118.61:8888
+      uri: http://192.168.0.114:8888
