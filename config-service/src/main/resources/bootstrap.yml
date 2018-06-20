@@ -9,3 +9,11 @@ spring:
         git:
           uri: https://github.com/wuyao1994/spring-cloud-event-sourcing-config.git
       label: dev
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery-service:8761/eureka/
