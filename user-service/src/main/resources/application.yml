@@ -18,6 +18,7 @@ spring:
     password: dbpass
     initialize: true
 security.ignored: /resources/**
+testValue: user value
 ---
 server:
   port: 8181

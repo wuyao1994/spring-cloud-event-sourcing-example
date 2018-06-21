@@ -2,6 +2,7 @@ package demo.api.v1;
 
 import demo.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,6 +15,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping(path = "/v1")
 public class UserControllerV1 {
+
+    @Value("${testValue}")
+    private String testValue;
 
     private UserServiceV1 userService;
 
@@ -32,5 +36,10 @@ public class UserControllerV1 {
         return Optional.ofNullable(user)
                 .map(a -> new ResponseEntity<User>(a, HttpStatus.OK))
                 .orElseThrow(() -> new UsernameNotFoundException("Username not found"));
+    }
+
+    @RequestMapping("/testValue")
+    public String getTestValue() {
+        return this.testValue;
     }
 }

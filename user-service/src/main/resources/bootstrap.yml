@@ -1,6 +1,8 @@
 spring:
   application:
     name: user-service
+  profiles:
+    active: development
 ---
 spring:
   profiles: docker
@@ -13,10 +15,11 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
-spring.profiles.active: development
 ---
 spring:
-  profiles: cloud
+  profiles: development
   cloud:
     config:
-      uri: ${vcap.services.config-service.credentials.uri:http://localhost:8888}
+      discovery:
+        service-id: config-service
+      enabled: true
