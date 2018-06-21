@@ -39,7 +39,7 @@ spring:
       kafka:
         binder:
           brokers: 192.168.0.114:9092
-          zk-nodes: 192.168.0.114:2182
+          zk-nodes: 192.168.0.114:2181
 security.ignored: /resources/**
 testValue: config value
 eureka:
