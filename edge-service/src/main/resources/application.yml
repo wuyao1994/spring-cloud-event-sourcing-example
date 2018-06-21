@@ -50,7 +50,7 @@ security:
   oauth2:
     resource:
       userInfoUri: http://192.168.0.114:8181/uaa/user
-  ignored: /catalog/**
+  ignored: /catalog/**, /uaa/v1/testValue
 eureka:
   instance:
     prefer-ip-address: true
